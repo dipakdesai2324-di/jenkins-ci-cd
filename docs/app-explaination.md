@@ -1,5 +1,5 @@
 # Application Explanation
-
+ 
 ## 1. What is app.py?
 `app.py` is the main Python source-code file of the application.
 It contains the code required to create and run a simple web application using the Flask framework.
