@@ -1,5 +1,5 @@
 # Application Explanation
- 
+
 ## 1. What is app.py?
 `app.py` is the main Python source-code file of the application.
 It contains the code required to create and run a simple web application using the Flask framework.
@@ -11,6 +11,8 @@ When a user opens the application URL in a browser, the application receives the
 
 **Application Flow:**
 Browser → HTTP Request → Flask Application → app.py → HTTP Response
+The application can return a message such as:
+**Hello, DevOps!**
 
 ## 3. What is Flask?
 Flask is a lightweight Python web framework.
@@ -28,6 +30,7 @@ def home():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 ```
+
 ## 5. Explanation of the Code
 ### `from flask import Flask`
 This imports the `Flask` class from the Flask framework.
@@ -35,6 +38,7 @@ It allows us to create a Flask web application.
 ### `app = Flask(__name__)`
 This creates the Flask application object.
 The `app` object is used to configure routes and run the application.
+
 ### `@app.route("/")`
 This defines a route for the root URL `/`.
 When a user accesses:
@@ -44,10 +48,64 @@ Flask executes the function associated with this route.
 This defines the Python function that handles requests to `/`.
 ### `return "Hello, DevOps!"`
 This sends the text response back to the browser.
+
 ### `if __name__ == "__main__":`
 This checks whether `app.py` is being executed directly.
 If it is, the Flask application is started.
+
 ### `app.run(host="0.0.0.0", port=5000)`
 This starts the Flask web server.
 `port=5000` means the application listens on port 5000.
-`host="0.0.0.0"` allows the application to listen on all avail
+`host="0.0.0.0"` allows the application to listen on all available network interfaces inside the environment, which is useful when running the application in a Docker container.
+
+## 6. How to Run the Application
+First, install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+Then start the application:
+```bash
+python app.py
+```
+The application will start on port 5000.
+Open the following URL in a browser:
+`http://localhost:5000`
+The browser should display:
+**Hello, DevOps!**
+
+## 7. What is requirements.txt?
+`requirements.txt` contains the Python dependencies required by the application.
+For this application, Flask is one of the required dependencies.
+Example:
+```text
+Flask
+```
+We can install the dependencies using:
+```bash
+pip install -r requirements.txt
+```
+This makes it easier to install the required packages when setting up the application on another machine or environment.
+
+## 8. Application Flow
+The overall application flow is:
+User → Browser → http://localhost:5000 → Flask Web Server → Route "/" → home() → "Hello, DevOps!" → Response
+
+## 9. Why is this application useful for the DevOps project?
+The application is intentionally simple so that we can focus on the DevOps workflow.
+The application can be stored in GitHub and then used for practicing:
+* Git and GitHub
+* Jenkins CI/CD
+* Automated testing
+* Docker image creation
+* Docker containers
+* Application deployment
+* Environment management
+
+The basic DevOps flow is:
+Developer → GitHub → Jenkins → Build & Test → Docker Build → Docker Image → Docker Container → Running Application
+The important distinction is:
+**app.py** → Application code
+**GitHub** → Source-code repository
+**Jenkins** → Automation / CI/CD
+**Docker** → Application packaging and runtime
+The `app.py` file is therefore the actual application code that we build, test, package, and deploy using DevOps tools.
