@@ -30,25 +30,25 @@ if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)
 ### from flask import Flask
 This imports the `Flask` class from the Flask framework.
 It allows us to create a Flask web application.
-### `app = Flask(__name__)`
+### app = Flask(__name__)
 This creates the Flask application object.
 The `app` object is used to configure routes and run the application.
 
-### `@app.route("/")`
+### @app.route("/")
 This defines a route for the root URL `/`.
 When a user accesses:
 `http://localhost:5000/`
 Flask executes the function associated with this route.
-### `def home():`
+### def home():
 This defines the Python function that handles requests to `/`.
-### `return "Hello, DevOps!"`
+### return "Hello, DevOps!"
 This sends the text response back to the browser.
 
-### `if __name__ == "__main__":`
+### if __name__ == "__main__":
 This checks whether `app.py` is being executed directly.
 If it is, the Flask application is started.
 
-### `app.run(host="0.0.0.0", port=5000)`
+### app.run(host="0.0.0.0", port=5000)
 This starts the Flask web server.
 `port=5000` means the application listens on port 5000.
 `host="0.0.0.0"` allows the application to listen on all available network interfaces inside the environment, which is useful when running the application in a Docker container.
