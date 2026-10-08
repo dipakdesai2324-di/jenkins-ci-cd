@@ -21,15 +21,10 @@ Instead of creating an HTTP server and request-handling functionality from scrat
 
 ## 4. Main Application Code
 A simple Flask application looks like this:
-'''
-from flask import Flask
-app = Flask(__name__)
-@app.route("/")
-def home():
-    return "Hello, DevOps!"
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-'''
+from flask import Flask 
+app = Flask(__name__) 
+@app.route("/") def home(): return "Hello, DevOps!" 
+if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)
 
 ## 5. Explanation of the Code
 ### `from flask import Flask`
