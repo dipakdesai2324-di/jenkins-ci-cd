@@ -6,7 +6,7 @@ This project demonstrates a Jenkins Declarative CI/CD pipeline integrated with G
 
 The pipeline automatically checks out application source code from GitHub, installs dependencies, runs tests, builds a Docker image, and deploys the application as a Docker container.
 
-## Tools Used
+## Tools Used 
 
 * Git
 * GitHub
