@@ -50,35 +50,31 @@ If it is, the Flask application is started.
 
 ### app.run(host="0.0.0.0", port=5000)
 This starts the Flask web server.
-`port=5000` means the application listens on port 5000.
-`host="0.0.0.0"` allows the application to listen on all available network interfaces inside the environment, which is useful when running the application in a Docker container.
+port=5000` means the application listens on port 5000.
+host="0.0.0.0"` allows the application to listen on all available network interfaces inside the environment, which is useful when running the application in a Docker container.
 
 ## 6. How to Run the Application
 First, install the required dependencies:
-```bash
 pip install -r requirements.txt
-```
 Then start the application:
-```bash
+bash
 python app.py
-```
+
 The application will start on port 5000.
 Open the following URL in a browser:
-`http://localhost:5000`
+http://localhost:5000
 The browser should display:
 **Hello, DevOps!**
 
 ## 7. What is requirements.txt?
-`requirements.txt` contains the Python dependencies required by the application.
+requirements.txt contains the Python dependencies required by the application.
 For this application, Flask is one of the required dependencies.
 Example:
-```text
 Flask
-```
 We can install the dependencies using:
-```bash
+bash
 pip install -r requirements.txt
-```
+
 This makes it easier to install the required packages when setting up the application on another machine or environment.
 
 ## 8. Application Flow
