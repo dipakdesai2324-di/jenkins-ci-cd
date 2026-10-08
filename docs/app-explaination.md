@@ -1,7 +1,7 @@
 # Application Explanation
 
 ## 1. What is app.py?
-`app.py` is the main Python source-code file of the application.
+app.py is the main Python source-code file of the application.
 It contains the code required to create and run a simple web application using the Flask framework.
 The `.py` extension indicates that the file contains Python code.
 
@@ -21,10 +21,10 @@ Instead of creating an HTTP server and request-handling functionality from scrat
 
 ## 4. Main Application Code
 A simple Flask application looks like this:
-from flask import Flask 
+'from flask import Flask 
 app = Flask(__name__) 
 @app.route("/") def home(): return "Hello, DevOps!" 
-if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)
+if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)'
 
 ## 5. Explanation of the Code
 ### from flask import Flask
@@ -32,10 +32,10 @@ This imports the `Flask` class from the Flask framework.
 It allows us to create a Flask web application.
 ### app = Flask(__name__)
 This creates the Flask application object.
-The `app` object is used to configure routes and run the application.
+The app object is used to configure routes and run the application.
 
 ### @app.route("/")
-This defines a route for the root URL `/`.
+This defines a route for the root URL /.
 When a user accesses:
 `http://localhost:5000/`
 Flask executes the function associated with this route.
