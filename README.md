@@ -50,12 +50,8 @@ The Jenkins job is configured as a Pipeline job and uses the Jenkinsfile stored 
 A GitHub webhook can be configured to trigger the Jenkins pipeline whenever new code is pushed to the repository.
 
 ## How to Access the Application
-
 After a successful pipeline execution, the application runs on port 5000.
-
-Example:
-
-http://SERVER_IP:5000
+Example: http://SERVER_IP:5000
 
 ## Key Jenkins Concepts Demonstrated
 
