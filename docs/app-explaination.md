@@ -27,7 +27,7 @@ app = Flask(__name__)
 if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)
 
 ## 5. Explanation of the Code
-### `from flask import Flask`
+### from flask import Flask
 This imports the `Flask` class from the Flask framework.
 It allows us to create a Flask web application.
 ### `app = Flask(__name__)`
