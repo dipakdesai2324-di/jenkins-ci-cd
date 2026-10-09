@@ -1,55 +1,42 @@
 pipeline {
-
     agent any
-
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-
         stage('Build') {
             steps {
                 sh 'python3 -m pip install -r app/requirements.txt'
             }
         }
-
         stage('Test') {
             steps {
+                sh 'python3 -m pip install pytest'
                 sh 'python3 -m pytest tests/'
             }
         }
-
         stage('Docker Build') {
             steps {
                 sh 'docker build -t jenkins-ci-cd-demo:${BUILD_NUMBER} .'
             }
         }
-
-        stage('Docker Run') {
+        stage('Deploy') {
             steps {
-                sh '''
-                    docker stop jenkins-demo || true
-                    docker rm jenkins-demo || true
-
-                    docker run -d \
-                      --name jenkins-demo \
-                      -p 5000:5000 \
-                      jenkins-ci-cd-demo:${BUILD_NUMBER}
-                '''
+                sh 'bash scripts/deploy.sh'
             }
         }
     }
-
     post {
         success {
-            echo 'Pipeline completed successfully.'
+            echo 'CI/CD pipeline completed successfully.'
         }
-
         failure {
-            echo 'Pipeline failed. Check the console logs.'
+            echo 'CI/CD pipeline failed. Check the console output.'
+        }
+        always {
+            echo 'Pipeline execution finished.'
         }
     }
 }
