@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 set -e
@@ -23,4 +22,3 @@ docker run -d \
 
 echo "Deployment completed successfully."
 echo "Application is available on port 5000."
-```
